@@ -1,0 +1,182 @@
+:root {
+  --base-color: rgb(166, 101, 226);
+  --complete-color: lightgreen;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 20px;
+}
+
+body {
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+a {
+  text-decoration: inherit;
+}
+
+h1 {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--base-color);
+}
+
+input,
+button[type='submit'] {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 30px;
+  border: 2px solid var(--base-color);
+  outline: none;
+  color: var(--base-color);
+  font-weight: bold;
+  transition: ease-in-out 0.2s;
+}
+
+input::placeholder {
+  font-weight: 100;
+  opacity: 0.5;
+  color: var(--base-color);
+}
+
+input {
+  flex-grow: 1;
+}
+
+input:focus {
+  background-color: color-mix(in srgb, var(--complete-color) 35%, transparent);
+  border: 2px solid var(--base-color);
+}
+
+form {
+  display: flex;
+  gap: 10px;
+  max-width: 500px;
+  margin: 0 auto 40px;
+}
+
+.container {
+  width: min(100% - 40px, 768px);
+  margin-inline: auto;
+}
+
+.tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tasks__empty {
+  text-align: center;
+  font-size: 2em;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: color-mix(in srgb, var(--base-color) 15%, transparent);
+  padding: 20px;
+  border-radius: 44px;
+  border: 2px solid var(--base-color);
+}
+
+.task--completed {
+  background-color: #f1f1f1;
+  border-color: var(--complete-color);
+  color: rgb(202, 202, 202);
+}
+
+.task__id {
+  position: absolute;
+  margin: -20px 0 0 -15px;
+  font-size: 0.85em;
+}
+
+.task__title {
+  flex-grow: 1;
+  flex-basis: 0;
+  color: var(--base-color);
+  font-size: 1rem;
+}
+
+.task__icon {
+  font-size: 1.5rem;
+  color: var(--base-color);
+  top: 5px;
+}
+
+.task__delete-btn,
+.task__check-btn {
+  font-size: 1.5rem;
+  color: var(--base-color);
+  top: 5px;
+  cursor: pointer;
+  transition: scale 0.3s, color 0.3s;
+}
+
+.task__delete-btn:hover {
+  color: rgb(209, 49, 97);
+}
+
+.task__check-btn:hover {
+  color: var(--complete-color);
+}
+
+.task__delete-btn:hover,
+.task__check-btn:hover {
+  scale: 1.2;
+}
+
+.task__check {
+  border: 2px solid var(--base-color);
+}
+.task--completed .task__icon,
+.task--completed .task__delete-btn,
+.task--completed .task__check-btn,
+.task--completed .task__title {
+  color: rgb(202, 202, 202);
+}
+
+.delete-all-btn,
+.reset-all-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 12px;
+  background-color: color-mix(in srgb, var(--base-color) 50%, transparent);
+  border: none;
+  transition: ease-in-out 0.2s;
+}
+
+.delete-all-btn:hover,
+.reset-all-btn:hover {
+  scale: 105%;
+  background-color: color-mix(in srgb, var(--base-color) 75%, transparent);
+}
+
+.tasks__actions {
+  display: flex;
+  gap: 12px;
+  padding-top: 20px;
+  align-items: end;
+  justify-content: flex-end;
+}
+
+.tasks__message {
+  padding: 8px 16px;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+  background-color: var(--complete-color);
+  align-items: end;
+  justify-content: flex-end;
+}
