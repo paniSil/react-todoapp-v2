@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import { Context } from '../context/Context'
-import { RiCheckboxCircleLine, RiDeleteBin5Line } from 'react-icons/ri'
+import { RiCheckDoubleFill, RiDeleteBin5Line } from 'react-icons/ri'
 import Button from './Button'
 
 const Actions = () => {
@@ -16,7 +16,7 @@ const Actions = () => {
         type="button"
         className="reset-all-btn"
       >
-        <RiCheckboxCircleLine style={{ color: 'white', fontSize: '1.5rem' }} />
+        <RiCheckDoubleFill style={{ color: 'white', fontSize: '1.5rem' }} />
       </Button>
       <Button title="Delete All Todos" onClick={deleteAllTasks} type="button" className="delete-all-btn">
         <RiDeleteBin5Line style={{ color: 'white', fontSize: '1.5rem' }} />

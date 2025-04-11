@@ -3,6 +3,7 @@ import Form from './components/Form'
 import Tasks from './components/Tasks'
 import Provider from './components/Provider'
 import Actions from './components/Actions'
+import { ToastContainer } from 'react-toastify'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Tasks />
         <Actions />
       </div>
+      <ToastContainer />
     </Provider>
   )
 }

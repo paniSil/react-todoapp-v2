@@ -88,12 +88,14 @@ form {
   padding: 20px;
   border-radius: 44px;
   border: 2px solid var(--base-color);
+  box-shadow: 3px 6px color-mix(in srgb, var(--base-color) 30%, transparent);
 }
 
 .task--completed {
   background-color: #f1f1f1;
   border-color: var(--complete-color);
   color: rgb(202, 202, 202);
+  box-shadow: 3px 6px color-mix(in srgb, var(--complete-color) 30%, transparent);
 }
 
 .task__id {
@@ -115,13 +117,37 @@ form {
   top: 5px;
 }
 
-.task__delete-btn,
 .task__check-btn {
-  font-size: 1.5rem;
+  width: 32px;
+  height: 32px;
   color: var(--base-color);
+  background-color: white;
+  cursor: pointer;
+  transition: scale 0.3s, color 0.3s;
+  border: 2px solid var(--base-color);
+  margin-right: 20px;
+}
+
+.task__check-checkmark {
+  font-size: 2rem;
+  position: relative;
+  top: -10px;
+  right: 4px;
+}
+
+.task__delete-btn {
+  font-size: 1.5rem;
   top: 5px;
   cursor: pointer;
   transition: scale 0.3s, color 0.3s;
+  position: relative;
+  top: -30px;
+  left: 100px;
+  background-color: white;
+  padding: 6px;
+  border-radius: 16px;
+  border: 2px solid rgb(202, 202, 202);
+  color: rgb(155, 155, 155);
 }
 
 .task__delete-btn:hover {
@@ -141,10 +167,12 @@ form {
   border: 2px solid var(--base-color);
 }
 .task--completed .task__icon,
-.task--completed .task__delete-btn,
-.task--completed .task__check-btn,
 .task--completed .task__title {
   color: rgb(202, 202, 202);
+}
+
+.task--completed .task__check-btn {
+  border: 2px solid var(--complete-color);
 }
 
 .delete-all-btn,
