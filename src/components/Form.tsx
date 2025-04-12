@@ -27,7 +27,7 @@ const Form = () => {
     <form onSubmit={handleSubmit}>
       <input type="text" placeholder="Enter new task" value={title} onChange={handleInputChange} />
       <button type="submit" title="Submit form">
-        Save
+        Add task
       </button>
     </form>
   )

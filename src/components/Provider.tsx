@@ -3,7 +3,7 @@ import { MOCK_TASKS } from '../data/mock-tasks'
 
 import { TaskInterface } from '../types/Task.interface'
 import { useState } from 'react'
-import { notifyCompleted } from './Toasts'
+import { notifications } from './Toasts'
 import { toast } from 'react-toastify'
 
 interface ProviderProps {
@@ -23,18 +23,12 @@ const Provider = ({ children }: ProviderProps) => {
 
   const deleteAllTasks = () => {
     setTasks([])
-    toast.error('All tasks were deleted', {
-      position: 'top-right',
-      autoClose: 2000
-    })
+    notifications.deleteAllTasks()
   }
 
   const clearCompletedTasks = () => {
     setTasks(tasks.filter((task) => !task.completed))
-    toast('Completed tasks were removed from the list', {
-      position: 'top-right',
-      autoClose: 2000
-    })
+    notifications.removeCompletedTasks()
   }
 
   const toggleTask = (id: string) => {

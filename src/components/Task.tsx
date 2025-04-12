@@ -4,7 +4,7 @@ import { FaCheck } from 'react-icons/fa'
 import { useContext } from 'react'
 import { Context } from '../context/Context'
 import Box from '@mui/material/Box'
-import { notifyCompleted, notifyDeleted, notifyUncompleted } from './Toasts'
+import { notifications } from './Toasts'
 
 interface TaskProps {
   task: TaskInterface
@@ -16,15 +16,15 @@ const Task = ({ task: { id, title, completed } }: TaskProps) => {
   const toggleNotify = (id: string) => {
     toggleTask(id)
     if (!completed) {
-      notifyCompleted()
+      notifications.completed()
     } else {
-      notifyUncompleted()
+      notifications.uncompleted()
     }
   }
 
   const deleteNotify = (id: string) => {
     deleteTask(id)
-    notifyDeleted()
+    notifications.deleted()
   }
 
   return (
