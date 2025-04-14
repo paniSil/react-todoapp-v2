@@ -5,11 +5,8 @@ import Provider from './components/Provider'
 import Actions from './components/Actions'
 import { ToastContainer } from 'react-toastify'
 import Timer from './components/Timer'
-import { HexColorPicker } from 'react-colorful'
-import { useState } from 'react'
 
 function App() {
-  const [color, setColor] = useState('#aabbcc')
   return (
     <>
       <Provider>
@@ -22,7 +19,6 @@ function App() {
         <ToastContainer />
       </Provider>
       <Timer />
-      <HexColorPicker color={color} onChange={setColor} />
     </>
   )
 }

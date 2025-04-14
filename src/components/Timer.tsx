@@ -38,12 +38,19 @@ const Timer = () => {
 
   return (
     <>
-      <div className="overlay"></div> <h1>React Idle Timer</h1>
-      <h2>useIdleTimer</h2>
-      <br />
-      <p>Current State: {state}</p>
-      <p>Action Events: {count}</p>
-      <p>{remaining} seconds remaining</p>
+      <div className={state === 'Idle' ? 'overlay' : 'hidden'}>
+        <div className={state === 'Idle' ? 'overlay-info' : 'hidden'}>
+          <h2>Doing tasks?</h2>
+          <img
+            src="../../public/cat-works.gif"
+            alt="working cat gif"
+            className={state === 'Idle' ? 'overlay-img' : 'hidden'}
+          />
+          <p className="overlay-text">The app is in {state} mode</p>
+        </div>
+      </div>
+
+      <h3>{remaining} seconds remaining</h3>
     </>
   )
 }

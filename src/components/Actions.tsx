@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import { Context } from '../context/Context'
 import { RiCheckDoubleFill, RiDeleteBin5Line } from 'react-icons/ri'
 import Button from './Button'
-import ColorPick from './ColorPick'
+import ButtonExample from './ColorPick'
 
 const Actions = () => {
   const { deleteAllTasks, clearCompletedTasks, completedTasksCount } = useContext(Context)
@@ -10,7 +10,10 @@ const Actions = () => {
   const completedTasksExist = completedTasksCount > 0
   return (
     <div className="tasks__actions">
-      <Button title="Pick color theme" onClick={ColorPick} type="button" className="colorpick-btn"></Button>
+      <ButtonExample />
+      {/* <Button title="Pick color theme" onClick={ColorPick} type="button" className="colorpick-btn">
+        <RiBrushAiLine style={{ color: 'white', fontSize: '1.5rem' }} />
+      </Button> */}
       <Button
         title="Reset All Todos"
         onClick={clearCompletedTasks}

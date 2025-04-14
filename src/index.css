@@ -1,6 +1,7 @@
 :root {
-  --base-color: rgb(166, 101, 226);
-  --complete-color: lightgreen;
+  --base-color: #a665e2;
+  /* --complete-color: lightgreen; */
+  --complete-color: rgb(from var(--base-color) calc(r - 22) calc(g + 137) calc(b - 82));
 }
 
 * {
@@ -28,6 +29,21 @@ h1 {
   text-align: center;
   text-transform: uppercase;
   color: var(--base-color);
+}
+
+h2 {
+  margin-bottom: 12px;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--base-color);
+}
+
+h3 {
+  text-align: center;
+  color: rgb(155, 155, 155);
+  padding: 12px;
+  font-weight: 100;
+  font-size: medium;
 }
 
 input,
@@ -114,6 +130,7 @@ form {
   flex-basis: 0;
   color: var(--base-color);
   font-size: 1rem;
+  padding-top: 12px;
 }
 
 .task__icon {
@@ -217,9 +234,48 @@ form {
 }
 
 .overlay {
-  position: fixed;
-  width: 100%;
+  position: fixed; /* Sit on top of the page content */ /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: color-mix(in srgb, var(--base-color) 25%, transparent); /* Black background with opacity */
+  backdrop-filter: blur(5px);
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */ /* Add a pointer on hover */
+}
+.overlay-info {
+  position: fixed; /* Sit on top of the page content */ /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
   height: 100vh;
-  background-color: color-mix(in srgb, var(--base-color) 25%, transparent);
-  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+}
+
+.overlay-img {
+  width: 300px;
+  border-radius: 24px;
+  border: 2px solid var(--base-color);
+}
+
+.hidden {
+  display: none;
+}
+
+.overlay-text {
+  font-size: medium;
+  color: white;
+  display: block;
+  border-radius: 20px;
+  margin: 12px;
+  padding: 6px 12px;
+  background-color: var(--base-color);
 }
