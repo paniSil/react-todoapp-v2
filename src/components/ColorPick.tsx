@@ -2,9 +2,10 @@
 
 import React from 'react'
 import reactCSS from 'reactcss'
-import { CompactPicker } from 'react-color'
+import { CompactPicker, ColorResult } from 'react-color'
 import { RiBrushAiLine } from 'react-icons/ri'
 import Button from './Button'
+import type { CSSProperties } from 'react'
 
 class ColorPick extends React.Component {
   state = {
@@ -21,7 +22,7 @@ class ColorPick extends React.Component {
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  handleChange = (color: any) => {
+  handleChange = (color: ColorResult) => {
     this.setState({ color: color.hex })
   }
 
@@ -46,14 +47,14 @@ class ColorPick extends React.Component {
           position: 'fixed',
           zIndex: '2',
           bottom: '160px'
-        },
+        } as CSSProperties,
         cover: {
           position: 'fixed',
           top: '0px',
           right: '0px',
           bottom: '0px',
           left: '0px'
-        }
+        } as CSSProperties
       }
     })
 
