@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useIdleTimer } from 'react-idle-timer'
+import catWorks from '../assets/catWorks.gif'
 
 const Timer = () => {
   // stopwatch
@@ -72,11 +73,7 @@ const Timer = () => {
       <div className={state === 'Idle' ? 'overlay' : 'hidden'}>
         <div className={state === 'Idle' ? 'overlay-info' : 'hidden'}>
           <h2>Doing tasks?</h2>
-          <img
-            src="../assets/cat-works.gif"
-            alt="working cat gif"
-            className={state === 'Idle' ? 'overlay-img' : 'hidden'}
-          />
+          <img src={catWorks} alt="working cat gif" className={state === 'Idle' ? 'overlay-img' : 'hidden'} />
           <p className="overlay-text">The app is in {state} mode</p>
           <p>Hopefully you're working on your tasks for: </p>
           <p>{formatTime(time)}</p>
