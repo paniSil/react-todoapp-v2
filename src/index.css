@@ -1,7 +1,6 @@
 :root {
   --base-color: #a665e2;
-  /* --complete-color: lightgreen; */
-  --complete-color: rgb(from var(--base-color) calc(r - 22) calc(g + 137) calc(b - 82));
+  --complete-color: rgb(from var(--base-color) calc(r - 52) calc(g + 93) calc(b - 113)); */
 }
 
 * {
@@ -46,6 +45,9 @@ h3 {
   font-size: medium;
 }
 
+p {
+  font-weight: 100;
+}
 input,
 button[type='submit'] {
   padding: 10px 20px;
@@ -277,5 +279,6 @@ form {
   border-radius: 20px;
   margin: 12px;
   padding: 6px 12px;
+  font-weight: 400;
   background-color: var(--base-color);
 }

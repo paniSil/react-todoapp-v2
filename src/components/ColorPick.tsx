@@ -2,11 +2,11 @@
 
 import React from 'react'
 import reactCSS from 'reactcss'
-import { ChromePicker } from 'react-color'
+import { CompactPicker } from 'react-color'
 import { RiBrushAiLine } from 'react-icons/ri'
 import Button from './Button'
 
-class SketchExample extends React.Component {
+class ColorPick extends React.Component {
   state = {
     displayColorPicker: false,
     color: '#a665e2'
@@ -43,8 +43,9 @@ class SketchExample extends React.Component {
           cursor: 'pointer'
         },
         popover: {
-          position: 'absolute',
-          zIndex: '2'
+          position: 'fixed',
+          zIndex: '2',
+          bottom: '160px'
         },
         cover: {
           position: 'fixed',
@@ -61,16 +62,13 @@ class SketchExample extends React.Component {
     document.documentElement.style.setProperty('--base-color', chosenColor)
     return (
       <div>
-        {/*<div style={styles.swatch} onClick={this.handleClick}>
-          <div style={styles.color} />
-        </div>*/}
         <Button title="Pick color theme" onClick={this.handleClick} type="button" className="colorpick-btn">
           <RiBrushAiLine style={{ color: 'white', fontSize: '1.5rem' }} />
         </Button>
         {this.state.displayColorPicker ? (
           <div style={styles.popover}>
             <div style={styles.cover} onClick={this.handleClose} />
-            <ChromePicker color={this.state.color} onChange={this.handleChange} />
+            <CompactPicker color={this.state.color} onChange={this.handleChange} />
           </div>
         ) : null}
       </div>
@@ -78,4 +76,4 @@ class SketchExample extends React.Component {
   }
 }
 
-export default SketchExample
+export default ColorPick

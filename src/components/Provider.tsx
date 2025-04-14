@@ -4,7 +4,6 @@ import { MOCK_TASKS } from '../data/mock-tasks'
 import { TaskInterface } from '../types/Task.interface'
 import { useState } from 'react'
 import { notifications } from './Toasts'
-import { toast } from 'react-toastify'
 
 interface ProviderProps {
   children: React.ReactNode
