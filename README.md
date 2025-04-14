@@ -1,54 +1,62 @@
-# React + TypeScript + Vite
+# Simple React ToDo app
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Project page on Netlify: [React ToDo app](https://todoapp-panisil.netlify.app/)
 
-Currently, two official plugins are available:
+React study project made during Fullstack JS course in Hillel IT School
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Components:
 
-## Expanding the ESLint configuration
+- Form for adding tasks
+- Task list
+- Check and close buttons for tasks
+- Completed tasks counter
+- Buttons to remove all completer tasks
+- Button for choosing color theme
+- Idle timer for turning on Idle Mode overlay
+- Stopwatch for Idle Mode
+- Task notifications
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Used technologies:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- React + TypeScript
+- Vite
+- CSS
+- React Icons
+- React Color
+- React-Toastify
+- React Idle Timer
+- React Context
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Setup
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Prerequisites
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- [Node.js](https://nodejs.org/)
+- [Yarn](https://yarnpkg.com/) (or npm)
+
+### Installation
+
+1. Clone this repository:
+   ```
+   git clone https://github.com/paniSil/react-todoapp-v2.git
+   ```
+2. Navigate to the project directory:
+
+   ```
+   cd react-todoapp-v2
+   ```
+
+3. Install dependencies (npm or yarn):
+
+   ```
+   npm install
+   yarn install
+   ```
+
+4. Run the development server (for yarn):
+
+   ```
+   yarn dev
+   ```
+
+5. Open your browser and go to http://localhost:3000 (or other port provided by yarn) to see the app in action.
