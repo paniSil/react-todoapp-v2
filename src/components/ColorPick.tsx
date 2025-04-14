@@ -21,7 +21,6 @@ class ColorPick extends React.Component {
     this.setState({ displayColorPicker: false })
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   handleChange = (color: ColorResult) => {
     this.setState({ color: color.hex })
   }
@@ -59,8 +58,8 @@ class ColorPick extends React.Component {
     })
 
     const chosenColor = this.state.color
-    console.log(chosenColor)
     document.documentElement.style.setProperty('--base-color', chosenColor)
+
     return (
       <div>
         <Button title="Pick color theme" onClick={this.handleClick} type="button" className="colorpick-btn">

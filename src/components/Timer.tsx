@@ -73,7 +73,7 @@ const Timer = () => {
         <div className={state === 'Idle' ? 'overlay-info' : 'hidden'}>
           <h2>Doing tasks?</h2>
           <img
-            src="../../public/cat-works.gif"
+            src="../assets/cat-works.gif"
             alt="working cat gif"
             className={state === 'Idle' ? 'overlay-img' : 'hidden'}
           />
