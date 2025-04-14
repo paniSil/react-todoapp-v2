@@ -43,9 +43,8 @@ class ColorPick extends React.Component {
           cursor: 'pointer'
         },
         popover: {
-          position: 'fixed',
-          zIndex: '2',
-          bottom: '160px'
+          position: 'absolute',
+          zIndex: '2'
         } as CSSProperties,
         cover: {
           position: 'fixed',
